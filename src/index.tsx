@@ -4,12 +4,15 @@ import Leaderboard from "./LeaderboardComp"
 
 import "./index.css"
 
-import mockDataInfillingLightSpan from "./mocks/code_infilling_light_span.json"
-import mockDataInfillingMultiLine from "./mocks/code_infilling_multi_line.json"
-import mockDataInfillingSingleLine from "./mocks/code_infilling_single_line.json"
-import mockDataInfillingSpan from "./mocks/code_infilling_span.json"
-import mockDataComplete from "./mocks/code_complete.json"
-import mockDataExpalin from "./mocks/code_expalin.json"
+// import mockDataInfillingLightSpan from "./mocks/code_infilling_light_span.json"
+// import mockDataInfillingMultiLine from "./mocks/code_infilling_multi_line.json"
+// import mockDataInfillingSingleLine from "./mocks/code_infilling_single_line.json"
+// import mockDataInfillingSpan from "./mocks/code_infilling_span.json"
+// import mockDataComplete from "./mocks/code_complete.json"
+// import mockDataExpalin from "./mocks/code_expalin.json"
+
+import mockDataChineseEval from "./mocks/ifcodeeval_chinese_eval.json"
+import mockDataEnglishEval from "./mocks/ifcodeeval_english_eval.json"
 
 
 const LeaderboardTabs = () => {
@@ -34,17 +37,9 @@ const LeaderboardTabs = () => {
     // console.log(activeTab);
     switch (activeTab) {
       case 'tab1':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataComplete, "complete"]} />;
+        return <Leaderboard theme={{ base: "light" }} args={[mockDataEnglishEval, "English Evaluation"]} />;
       case 'tab2':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataExpalin, "expalin"]} />;
-      case 'tab3':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataInfillingSingleLine, "infilling"]} />;
-      case 'tab4':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataInfillingMultiLine, "infilling"]} />;
-      case 'tab5':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataInfillingSpan, "infilling"]} />;
-      case 'tab6':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataInfillingLightSpan, "infilling"]} />;
+        return <Leaderboard theme={{ base: "light" }} args={[mockDataChineseEval, "Chinese Evaluation"]} />;
       default:
         return <div>Select a tab</div>;
     }
@@ -52,12 +47,8 @@ const LeaderboardTabs = () => {
   return (
     <div className="tabs-container">
       <ul className={`tabs ${isMobile ? 'mobile' : ''}`}>
-        <li className={activeTab === 'tab1' ? 'is-active' : ''} onClick={() => setActiveTab('tab1')}><a>Complete</a></li>
-        <li className={activeTab === 'tab2' ? 'is-active' : ''} onClick={() => setActiveTab('tab2')}><a>Expalin</a></li>
-        <li className={activeTab === 'tab3' ? 'is-active' : ''} onClick={() => setActiveTab('tab3')}><a>Infilling Single Line</a></li>
-        <li className={activeTab === 'tab4' ? 'is-active' : ''} onClick={() => setActiveTab('tab4')}><a>Infilling Multi Line</a></li>
-        <li className={activeTab === 'tab5' ? 'is-active' : ''} onClick={() => setActiveTab('tab5')}><a>Infilling Span</a></li>
-        <li className={activeTab === 'tab6' ? 'is-active' : ''} onClick={() => setActiveTab('tab6')}><a>Infilling Light Span</a></li>
+        <li className={activeTab === 'tab1' ? 'is-active' : ''} onClick={() => setActiveTab('tab1')}><a>English Evaluation</a></li>
+        <li className={activeTab === 'tab2' ? 'is-active' : ''} onClick={() => setActiveTab('tab2')}><a>Chinese Evaluation</a></li>
       </ul>
       <div className="tab-content">
         {renderLeaderboard()}
@@ -74,53 +65,53 @@ ReactDOM.render(
           <div className="columns  is-fullwidth">
             <div className="column has-text-centered is-fullwidth">
               <h1 className="title is-1 publication-title">
-                MCEVAL: Massively Multilingual Code Evaluation
+                IFEvalCode: Controlled Code Generation
               </h1>
               <div className="column has-text-centered">
                 <div className="publication-links">
                   <span className="link-block">
-                    <a href="https://arxiv.org/abs/2406.07436"
+                    <a href="."
                       className="external-link button is-normal is-rounded is-dark">
                       <span className="icon">
                         <i className="fas fa-file-pdf"></i>
                       </span>
-                      <span>Paper</span>
+                      <span>Paper (Coming Soon)</span>
                     </a>
                   </span>
 
                   <span className="link-block">
-                    <a href="https://github.com/MCEVAL/McEval"
+                    <a href="https://github.com/CSJianYang/IFEvalCode"
                       className="external-link button is-normal is-rounded is-dark">
                       <span className="icon">
                         <i className="fab fa-github"></i>
                       </span>
-                      <span>Code</span>
+                      <span>Code (Coming Soon)</span>
                     </a>
                   </span>
 
                   <span className="link-block">
-                    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/McEval"
+                    <a href="."
                       className="external-link button is-normal is-rounded is-dark">
                       <span className="icon">
                         <i className="far fa-images"></i>
                       </span>
-                      <span>Evaluation Data</span>
+                      <span>Evaluation Data (Coming Soon)</span>
                     </a>
                   </span>
 
                   <span className="link-block">
-                    <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/McEval-Instruct"
+                    <a href="."
                       className="external-link button is-normal is-rounded is-dark">
                       <span className="icon">
                         <i className="far fa-images"></i>
                       </span>
-                      <span>McEval-Instruct</span>
+                      <span>IFEvalCode-Instruct (Coming Soon)</span>
                     </a>
                   </span>
 
                   <span className="link-block">
                     <a
-                      href="https://mceval.github.io"
+                      href="."
                       className="external-link button is-normal is-rounded is-dark"
                     >
                       <span className="icon">
@@ -135,8 +126,6 @@ ReactDOM.render(
               <div className="column has-text-centered">
                 <LeaderboardTabs />
               </div>
-
-
             </div>
           </div>
         </div>

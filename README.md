@@ -1,6 +1,6 @@
-# MCEVAL
+# IFEvalCode
 
-This is the repository that contains source code for the [MCEVAL website](https://mceval.github.io/).
+This is the repository that contains source code for the [IFEvalCode website](https://IFEvalCode.github.io/).
 
 The code refers to [Livecode Bench website](https://livecodebench.github.io).
 
